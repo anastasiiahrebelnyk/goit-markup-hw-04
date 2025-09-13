@@ -64,6 +64,8 @@ img {
 
 .header {
     border-bottom: 1px solid #e7e9fc;
+    box-shadow: 0 1px 6px 0 rgba(46, 47, 66, 0.08), 0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 2px 1px 0 rgba(46, 47, 66, 0.08);
+
 }
 
 .flex-box {
@@ -113,7 +115,23 @@ border: none;
         text-transform: capitalize;
         text-decoration: none;
     padding: 24px 0;
-    
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-link.current {
+    color: #404BBF;
+    position: relative;
+}
+
+.nav-link.current::after {
+content: "";
+position: absolute;
+left: 0;
+bottom: -1px;
+width: 100%;
+height: 4px;
+border-radius: 2px;
+background-color: #404BBF;
 }
 
 .list-box {
@@ -153,6 +171,7 @@ border: none;
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0.02em;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero-section {
@@ -165,6 +184,9 @@ background-image: linear-gradient(to bottom,
     rgba(46, 47, 66, 0.7)), url(../images/people-office.jpg);
 background-position: center center;
 background-size: cover;
+max-width: 1440px;
+margin-left: auto;
+margin-right: auto;
 }
 
 h1 {
@@ -199,7 +221,7 @@ h1 {
     min-width: 169px;
     cursor: pointer;
     transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(linear);
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-property: background-color, color;
     transition-delay: 150ms;
 }
@@ -226,6 +248,15 @@ h1 {
     justify-content: space-between;
     gap: 24px;
 }
+
+.values-icon {
+    padding: 24px 100px;
+    border: solid 1px #8E8F99;
+        border-radius: 4px;
+        background-color: #F4F4FD;
+    margin-bottom: 8px;
+}
+
 
 .values-title {
     font-size: 24px;
@@ -265,6 +296,7 @@ h1 {
     line-height: 1.5;
         letter-spacing: 0.02em;
         color: #434455;
+        margin-bottom: 8px;
 }
 
 .team-section {
@@ -273,8 +305,38 @@ h1 {
     padding-bottom: 120px;
 }
 
+.team-social-list{
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    justify-content: space-between;
+    
+    
+    
+}
 
+.team-social-link {
+    /* display: block; */
+    /* max-width: calc((100% - 3*24px)/4); */
+    
+}
 
+.team-svg {
+    fill: #F4F4FD;
+    transition-duration: 250ms;
+        transition-delay: 150ms;
+        display: block;
+}
+
+.team-social-item {
+    background-color: #4D5AE5;
+    border-radius: 90px;
+    padding: 12px;
+    justify-content: center;
+    align-items: center;
+    max-width: calc((100% - 3*24px)/4);
+    
+}
 
 .team-list {
     display: flex;
@@ -295,7 +357,7 @@ h1 {
 }
 
 .team-person {
-    padding: 32px 0;
+    padding: 32px 16px;
 }
 
 .team-subtitle {
@@ -389,12 +451,35 @@ border-top: none
     
 }
 
+.thumb{
+    position: relative;
+    overflow: hidden;
+}
+
+portfolio-list-item:hover {
+    transform: translateY(0%);
+    box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08), 0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
+    
+} 
+
+.thumb-text {
+    position: absolute;
+    top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transform: translateY(100%);
+        transition: transform 250ms ease-in-out;
+}
 
 .footer {
     background-color: #2e2f42;
     color: #F4F4FD;
    padding-top: 100px;
     padding-bottom: 100px;
+    display: flex;
+    justify-content: flex-start;
+    gap: 120px;
 }
 
 .logo-name-footer {
@@ -413,4 +498,37 @@ margin-bottom: 16px;
 display: inline-block;
 margin-bottom: 16px;
 margin-right: 0;
+}
+
+.footer-social-list {
+    display: flex;
+    gap: 16px;
+    
+}
+
+.footer-social-item {
+    
+    background-color: #4D5AE5;
+        border-radius: 50%;
+        padding: 12px;
+        justify-content: center;
+        align-items: center;
+        max-width: calc((100% - 3*16px)/4);
+        
+}
+
+.footer-social-title {
+    font-weight: 500;
+        font-size: 16px;
+        line-height: 1.5;
+            letter-spacing: 0.02em;
+color: #FFFFFF;
+margin-bottom: 16px;
+}
+
+.footer-svg {
+    fill: #F4F4FD;
+        transition-duration: 250ms;
+        transition-delay: 150ms;
+        display: block;
 }
